@@ -1,0 +1,83 @@
+
+/********** Colors ***********/
+:root {
+    --color-primary: #733434;
+    --color-primary-dark: #5e231f;
+    --color-secondary: #a6705d;
+    --color-text: #fde4c1;
+    --navbar-height: 3rem;
+}
+
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    height: calc(100% - var(--navbar-height));
+}
+
+.wrapper>.row {
+    height: auto;
+}
+
+.navbar {
+    height: var(--navbar-height);
+    background: var(--color-primary-dark)  !important;
+}
+
+.navbar-brand {
+    height: var(--navbar-height);
+    color: var(--color-text)  !important;
+    background: var(--color-primary);
+    font-size: 1rem;
+}
+
+.navbar-toggler-icon {
+    font-size: 0.8rem;
+}
+
+.module-bar {
+    background: var(--color-primary-dark);
+    color: var(--color-text);
+}
+
+#sidebarMenu .nav-link {
+    color: white;
+}
+
+#sidebarMenu .nav-link.active {
+    background: var(--color-secondary);
+    color: black;
+}
+
+#sidebarMenu .nav-link:hover {
+    background: var(--color-secondary);
+    color: black;
+}
+
+.table > thead {
+    background: var(--color-secondary);
+}
+
+.page-item.active .page-link {
+    border: black;
+}
+
+.page-item .page-link {
+    color: black;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    main>.container {
+        border: 1px solid var(--border-color);
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .wrapper > .row {
+        height: 100%;
+    }
+}
