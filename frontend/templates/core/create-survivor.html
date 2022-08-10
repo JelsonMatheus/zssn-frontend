@@ -4,7 +4,71 @@
 {% block title %}zssn - index{% endblock %}
 
 {% block content %}
-<div class="p-5">
-    
-</div>
-{% blockend %}
+<form id="survivorForm" class="p-5 border">
+    <fieldset>
+        <legend class="fs-5 fw-bold">Sobreviventes:</legend>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="name" class="form-label">Nome:</label>
+                <input id="name" name="name" type="text" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="age" class="form-label">Idade:</label>
+                <input id="age" name="age" type="number" min="0" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="gender" class="form-label">Sexo:</label>
+                <select name="gender" class="form-select" required>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="latitude" class="form-label">Latitude:</label>
+                <input id="latitude" name="latitude" type="number" min="-90" max="90" 
+                    class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="longitude" class="form-label">Longitude:</label>
+                <input id="longitude" name="longitude" type="number" min="-180" max="180"
+                    class="form-control" required>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset name="inventory" class="mt-5">
+        <legend class="fs-5 fw-bold">Itens:</legend>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="water" class="form-label">Água:</label>
+                <input id="water" name="inventory.water" type="number" min="0" class="form-control">
+            </div>
+            <div class="col">
+                <label for="food" class="form-label">Alimentação:</label>
+                <input id="food" name="inventory.food" type="number" min="0" class="form-control">
+            </div>
+            <div class="col">
+                <label for="medication" class="form-label">Medicação:</label>
+                <input id="medication" name="inventory.medication" type="number" min="0" class="form-control">
+            </div>
+            <div class="col">
+                <label for="ammunition" class="form-label">Munição:</label>
+                <input id="ammunition" name="inventory.ammunition" type="number" min="0" class="form-control">
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="mt-5 d-flex">
+        <button class="btn btn-success ms-auto">
+            <i class="bi bi-clipboard-heart-fill"></i>
+            Salvar
+        </button>
+    </div>
+</form>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/api-survivor.js' %}"></script>
+<script src="{% static 'js/create-survivor.js'%}"></script>
+{% endblock %}

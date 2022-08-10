@@ -67,6 +67,15 @@ body {
     color: black;
 }
 
+.toast-danger {
+    background: red;
+    color: white;
+}
+.toast-succes {
+    background: rgb(71, 131, 71);
+    color: white
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     main>.container {
