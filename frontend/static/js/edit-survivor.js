@@ -18,6 +18,8 @@ function showSurvivor() {
                 input[0].value = value;
         }
         showInventory(pk);
+    }).catch(error => {
+        showNotFound();
     });
 
 
@@ -66,4 +68,9 @@ function updateLocation() {
         const msg = "Não foi possível realizar a operação."
         createToastify(msg, "error");
     });
+}
+
+function showNotFound() {
+    document.getElementById('survivorForm').style.display = 'none';
+    document.getElementById('contentNotFound').style.display = 'block';
 }

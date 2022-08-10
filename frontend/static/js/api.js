@@ -25,7 +25,7 @@ class ApiBase {
             headers: this.headers,
             mode: 'cors'
         }
-        return await this.request(url, init);
+        return this.request(url, init);
     }
 
     async patch(url, data) {
@@ -35,20 +35,20 @@ class ApiBase {
             headers: this.headers,
             mode: 'cors'
         }
-        return await this.request(url, init);
+        return this.request(url, init);
     }
 
     async request(url, init) {
         const path = this.base_url + url;
         this.spinner.show();
 
-        return await fetch(path, init)
+        return fetch(path, init)
             .then(response => this.handleErrors(response))
             .then(responseJson => responseJson)
             .finally(() => this.spinner.hide());
     }
 
-    async handleErrors(response) {
+    handleErrors(response) {
         if (!response.ok) {
             const error = new Error(response.statusText);
             error.response = response;

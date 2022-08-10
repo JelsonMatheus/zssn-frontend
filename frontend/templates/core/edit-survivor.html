@@ -18,7 +18,7 @@
                 <input id="age" name="age" type="number" min="0" class="form-control" readonly>
             </div>
             <div class="col">
-                <label for="gender" class="form-label">Sexo:</label>
+            <label for="gender" class="form-label">Sexo:</label>
                 <select name="gender" class="form-select" value="M" readonly>
                     <option value="M">Masculino</option>
                     <option value="F">Feminino</option>
@@ -70,6 +70,10 @@
         </button>
     </div>
 </form>
+
+<div id="contentNotFound" class="mt-2 p-5" style="display: none;">
+    <h1>Not Found</h1>
+</div>
 {% endblock %}
 
 {% block javascript %}
