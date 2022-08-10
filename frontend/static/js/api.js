@@ -28,6 +28,16 @@ class ApiBase {
         return await this.request(url, init);
     }
 
+    async patch(url, data) {
+        const init = {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: this.headers,
+            mode: 'cors'
+        }
+        return await this.request(url, init);
+    }
+
     async request(url, init) {
         const path = this.base_url + url;
         this.spinner.show();

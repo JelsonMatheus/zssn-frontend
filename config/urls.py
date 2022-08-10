@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic.base import RedirectView
 
 from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.IndexView.as_view(), name='index'),
-    path('create/', views.CreateSurvivorView.as_view(), name='create-survivor'),
-    path('edit/', views.CreateSurvivorView.as_view(), name='edit-survivor'),
+    path('', RedirectView.as_view(url='survivor/', permanent=False), name='root'),
+    path('survivor/', views.IndexView.as_view(), name='index'),
+    path('survivor/create/', views.CreateSurvivorView.as_view(), name='create-survivor'),
+    path('survivor/<int:pk>/edit/', views.EditSurvivorView.as_view(), name='edit-survivor'),
 ]

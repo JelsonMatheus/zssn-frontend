@@ -22,12 +22,14 @@ async function showList() {
 
     } catch(error) {
         const msg = "Sistema indisponível.";
-        Toastify({text: msg, className:"toast-danger", duration: 3000}).showToast();
+        createToastify(msg);
     }
 }
 
 function templateRow(survivor, row) {
     const infected = (survivor.is_infected) ? "Sim" : "Não";
+    console.table(survivor);
+    const id = survivor.pk;
     const template =
     `<tr>
         <td>${row}</td>
@@ -36,7 +38,11 @@ function templateRow(survivor, row) {
         <td>${survivor.gender}</td>
         <td>${survivor.latitude}°N ${survivor.longitude}°S</td>
         <td>${infected}</td>
-        <td><i class="bi bi-pencil-square"></i></td>
+        <td>
+            <a href="${id}/edit/" class="text-decoration-none">
+                <i class="bi bi-pencil-square"></i>
+            </a>
+        </td>
     <tr>`
 
     return template;

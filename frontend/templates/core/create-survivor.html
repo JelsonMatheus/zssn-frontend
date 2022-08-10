@@ -1,12 +1,12 @@
 {% extends 'core/base/base.html' %}
 {% load static %}
 
-{% block title %}zssn - index{% endblock %}
+{% block title %}zssn - create{% endblock %}
 
 {% block content %}
-<form id="survivorForm" class="p-5 border">
+<form id="survivorForm" class="p-5 border" method="POST">
     <fieldset>
-        <legend class="fs-5 fw-bold">Sobreviventes:</legend>
+        <legend class="fs-5 fw-bold">Sobrevivente:</legend>
         <div class="row mt-2">
             <div class="col">
                 <label for="name" class="form-label">Nome:</label>
@@ -27,12 +27,12 @@
         <div class="row mt-2">
             <div class="col">
                 <label for="latitude" class="form-label">Latitude:</label>
-                <input id="latitude" name="latitude" type="number" min="-90" max="90" 
+                <input id="latitude" name="latitude" type="number" min="-90" max="90" step="0.001"
                     class="form-control" required>
             </div>
             <div class="col">
                 <label for="longitude" class="form-label">Longitude:</label>
-                <input id="longitude" name="longitude" type="number" min="-180" max="180"
+                <input id="longitude" name="longitude" type="number" min="-180" max="180" step="0.001"
                     class="form-control" required>
             </div>
         </div>

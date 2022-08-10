@@ -18,7 +18,7 @@ class CreateSurvivorView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['modulo'] = "ADICIONAR SOBREVIVENTES"
-        return 
+        return context
 
 
 class EditSurvivorView(generic.TemplateView):
