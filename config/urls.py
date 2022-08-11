@@ -26,4 +26,5 @@ urlpatterns = [
     path('survivor/create/', views.CreateSurvivorView.as_view(), name='create-survivor'),
     path('survivor/<int:pk>/edit/', views.EditSurvivorView.as_view(), name='edit-survivor'),
     path('survivor/infected/', views.InfectedSurvivorView.as_view(), name='infected'),
+    path('reports/', views.ReportsView.as_view(), name='reports'),
 ]

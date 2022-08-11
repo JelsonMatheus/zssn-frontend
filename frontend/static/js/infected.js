@@ -22,7 +22,7 @@ function save() {
         return;
     }
 
-    api.reportInfected(data).then(() => {
+    api.reportContamination(data).then(() => {
         const msg = "Dados salvos com sucesso!";
         createToastify(msg, 'succes');
     }).catch(error => {

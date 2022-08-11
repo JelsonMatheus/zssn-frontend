@@ -11,18 +11,19 @@
 function showSurvivor() {
     const api = new ApiSurvivor();
     const pk = document.getElementById('pk').value;
+
     api.show(pk).then(data => {
         for(const [key, value] of Object.entries(data)) {
             input = document.getElementsByName(key);
+
             if(input.length > 0)
                 input[0].value = value;
         }
         showInventory(pk);
+
     }).catch(error => {
         showNotFound();
     });
-
-
 }
 
 function showInventory(pk) {

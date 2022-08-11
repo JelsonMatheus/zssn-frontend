@@ -29,10 +29,20 @@ class EditSurvivorView(generic.TemplateView):
         context['modulo'] = "EDITAR SOBREVIVENTES"
         return context
 
+
 class InfectedSurvivorView(generic.TemplateView):
     template_name = "core/infected.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['modulo'] = "RELATAR INFECÇÃO"
+        return context
+
+
+class ReportsView(generic.TemplateView):
+    template_name = "core/reports.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['modulo'] = "RELATÓRIOS"
         return context

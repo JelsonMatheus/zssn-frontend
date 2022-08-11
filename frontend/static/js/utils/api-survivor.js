@@ -25,8 +25,28 @@ class ApiSurvivor extends ApiBase {
         return this.get(endpoint);
     }
 
-    async reportInfected(data) {
+    async reportContamination(data) {
         const endpoint = 'report-contamination/';
         return this.post(endpoint, data);
+    }
+
+    async reportInfected() {
+        const endpoint = 'reports/infected/';
+        return this.get(endpoint);
+    }
+
+    async reportUninfected() {
+        const endpoint = 'reports/uninfected/';
+        return this.get(endpoint);
+    }
+
+    async reportAvgResources() {
+        const endpoint = 'reports/avg-resources/';
+        return this.get(endpoint);
+    }
+
+    async reportLostPoints() {
+        const endpoint = 'reports/lost-points/';
+        return this.get(endpoint);
     }
 }

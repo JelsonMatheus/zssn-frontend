@@ -16,7 +16,6 @@ async function salveSurvivor() {
         location.href = `../${obj.pk}/edit/`;
         
     } catch(error) {
-        console.log(error);
         const msg = "Não foi possível realizar a operação."
         createToastify(msg);
     }
