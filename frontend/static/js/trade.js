@@ -106,6 +106,9 @@ function loadSurvivors() {
             survivorSeller.innerHTML += createOptionsSelect(elem);
             survivorBuyer.innerHTML += createOptionsSelect(elem);
         });
+
+        loadInventory('seller');
+        loadInventory('buyer');
     });
 }
 
