@@ -1,1 +1,1 @@
-web: gunicorn zssn.wsgi
+web: gunicorn core.wsgi
