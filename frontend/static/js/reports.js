@@ -23,8 +23,8 @@ async function infectedChart() {
         data.addColumn('string', 'Element');
         data.addColumn('number', 'Percentage');
         data.addRows([
-            ['Infectados', infected.percentage],
             ['Não Infectados', uninfected.percentage],
+            ['Infectados', infected.percentage],
         ]);
 
         const chart = new google.visualization.PieChart(document.getElementById('infectedChart'));

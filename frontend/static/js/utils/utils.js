@@ -15,3 +15,12 @@ function createToastify(msg, type=null) {
         }
     }).showToast();
 }
+
+function filterEmptyValue(obj) {
+    return Object.entries(obj).filter(([_, v]) => v != '')
+        .reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
+}
+
+function isAllEmptyItems(Items) {
+    return Object.values(Items).every(x => (x === 0 || x === ''));
+}

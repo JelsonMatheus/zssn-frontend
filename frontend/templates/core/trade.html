@@ -1,0 +1,101 @@
+{% extends 'core/base/base.html' %}
+{% load static %}
+
+{% block title %}zssn - trade{% endblock %}
+
+{% block content %}
+<form id="survivorForm" class="p-2 p-sm-5 border" method="POST">
+    <fieldset id="seller">
+        <legend class="fs-5 fw-bold">Vendedor:</legend>
+
+        <p id="error-seller" class="text-danger" style="display: none"></p>
+
+        <div class="row">
+            <div class="col">
+                <label for="survivorSeller" class="form-label">Vendedor:</label>
+            </div>
+            <div class="col text-end">
+                <p class="fw-bold">Pontos: <span id="ponto-seller">0<span></p>
+            </div>
+        </div>
+        <select id="survivorSeller" name="survivor_seller" class="form-select" required></select>
+
+        <div class="row mt-2 seller">
+            <div class="col">
+                <label for="waterSends" class="form-label">Água:</label>
+                <input id="waterSends" name="seller.water" type="number" min="0" max="0" 
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="foodSends" class="item form-label">Alimentação:</label>
+                <input id="foodSends" name="seller.food" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="medicationSends" class="form-label">Medicação:</label>
+                <input id="medicationSends" name="seller.medication" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="ammunitionSends" class="form-label">Munição:</label>
+                <input id="ammunitionSends" name="seller.ammunition" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset id="buyer" class="mt-3">
+        <legend class="fs-5 fw-bold">Comprador:</legend>
+
+        <p id="errosInventory" class="text-danger" style="display: none"></p>
+
+        <div class="row">
+            <div class="col">
+                <label for="survivorBuyer" class="form-label">Comprador:</label>
+            </div>
+            <div class="col text-end">
+                <p class="fw-bold">Pontos: <span id="ponto-buyer">0<span></p>
+            </div>
+        </div>
+        <select id="survivorBuyer" name="survivor_buyer" class="form-select" required></select>
+
+        <div class="row mt-2">
+            <div class="col">
+                <label for="water" class="form-label">Água:</label>
+                <input id="waterBuyer" name="buyer.water" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="foodBuyer" class="form-label">Alimentação:</label>
+                <input id="foodBuyer" name="buyer.food" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="medicationBuyer" class="form-label">Medicação:</label>
+                <input id="medicationBuyer" name="buyer.medication" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+            <div class="col">
+                <label for="ammunitionBuyer" class="form-label">Munição:</label>
+                <input id="ammunitionBuyer" name="buyer.ammunition" type="number" min="0" max="0"
+                    class="form-control">
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="mt-5 d-flex">
+        <button id="btnSalve" class="btn btn-success ms-auto">
+            <i class="bi bi-clipboard-heart-fill"></i>
+            Salvar
+        </button>
+    </div>
+</form>
+
+<div id="contentNotFound" class="mt-2 p-5" style="display: none;">
+    <h1>Not Found</h1>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/trade.js'%}"></script>
+{% endblock %}

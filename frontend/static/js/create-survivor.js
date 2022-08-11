@@ -11,13 +11,11 @@ async function salveSurvivor() {
     data = createSurvivorData();
     try {
         const obj = await api.create(data);
-        //const msg = "Sobrevivente Salvo com sucesso!"
-        //createToastify(msg);
         location.href = `../${obj.pk}/edit/`;
         
     } catch(error) {
         const msg = "Não foi possível realizar a operação."
-        createToastify(msg);
+        createToastify(msg, 'error');
     }
 }
 

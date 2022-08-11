@@ -39,6 +39,15 @@ class InfectedSurvivorView(generic.TemplateView):
         return context
 
 
+class TradeView(generic.TemplateView):
+    template_name = "core/trade.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['modulo'] = "COMERCIALIZAÇÃO"
+        return context
+
+
 class ReportsView(generic.TemplateView):
     template_name = "core/reports.html"
 

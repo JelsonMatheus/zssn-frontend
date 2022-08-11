@@ -8,14 +8,13 @@ class ApiBase {
         this.spinner = new bootstrap.Modal(document.getElementById("spinner"));
     }
 
-    async get(url) {
+    async get(url, params) {
         const unit = {
             method: 'GET',
             headers: this.headers,
             mode: 'cors'
         }
-
-        return this.request(url, unit);
+        return this.request(url, unit, params);
     }
 
     async post(url, data) {
@@ -38,8 +37,8 @@ class ApiBase {
         return this.request(url, init);
     }
 
-    async request(url, init) {
-        const path = this.base_url + url;
+    async request(url, init, params=null) {
+        const path = this.base_url + url +this.getParams(params);
         this.spinner.show();
 
         return fetch(path, init)
@@ -55,5 +54,9 @@ class ApiBase {
             throw error;
         }
         return response.json();
+    }
+
+    getParams(params=null) {
+        return (params) ? ("?" + new URLSearchParams(params)) : "";
     }
 }

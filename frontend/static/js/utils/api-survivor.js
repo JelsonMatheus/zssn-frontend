@@ -1,8 +1,8 @@
 class ApiSurvivor extends ApiBase {
 
-    async list() {
+    async list(params=null) {
         const endpoint = 'survivors/';
-        return this.get(endpoint);
+        return this.get(endpoint, params);
     }
 
     async create(data) {
@@ -27,6 +27,11 @@ class ApiSurvivor extends ApiBase {
 
     async reportContamination(data) {
         const endpoint = 'report-contamination/';
+        return this.post(endpoint, data);
+    }
+
+    async trade(data) {
+        const endpoint = 'trades/';
         return this.post(endpoint, data);
     }
 
