@@ -24,4 +24,9 @@ class ApiSurvivor extends ApiBase {
         const endpoint = `survivors/${pk}/inventory/`;
         return this.get(endpoint);
     }
+
+    async reportInfected(data) {
+        const endpoint = 'report-contamination/';
+        return this.post(endpoint, data);
+    }
 }

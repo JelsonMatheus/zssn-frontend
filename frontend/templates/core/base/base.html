@@ -33,7 +33,7 @@
             </button>
             <span class="ms-2 ms-md-5 fw-bold">ZSSN</span>
         </div>
-        <span class="d-none d-sm-inline fw-bold text-white ms-auto me-3 ms-md-3">
+        <span class="d-none d-sm-inline fw-bold ms-auto me-3 ms-md-3">
             Rede Social de Sobrevivência Zumbi
         </span>
     </header>
@@ -77,8 +77,9 @@
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <script src="{% static 'js/utils.js'%}"></script>
-    <script src="{% static 'js/api.js'%}"></script>
+    <script src="{% static 'js/utils/utils.js'%}"></script>
+    <script src="{% static 'js/utils/api.js'%}"></script>
+    <script src="{% static 'js/utils/api-survivor.js' %}"></script>
 
     {% block javascript %} {% endblock %}
 </body>

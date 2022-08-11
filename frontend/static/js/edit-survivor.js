@@ -4,7 +4,7 @@
     document.getElementById('survivorForm').addEventListener('submit', function(event) {
         event.preventDefault();
         updateLocation();
-    })
+    });
 
 })();
 

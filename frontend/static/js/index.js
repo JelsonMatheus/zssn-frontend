@@ -28,7 +28,6 @@ async function showList() {
 
 function templateRow(survivor, row) {
     const infected = (survivor.is_infected) ? "Sim" : "Não";
-    console.table(survivor);
     const id = survivor.pk;
     const template =
     `<tr>
@@ -43,7 +42,7 @@ function templateRow(survivor, row) {
                 <i class="bi bi-pencil-square"></i>
             </a>
         </td>
-    <tr>`
+    </tr>`
 
     return template;
 }

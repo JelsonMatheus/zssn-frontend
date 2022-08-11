@@ -23,6 +23,7 @@ body {
 .navbar {
     height: var(--navbar-height);
     background: var(--color-primary-dark)  !important;
+    color: var(--color-text);
 }
 
 .navbar-brand {
@@ -57,6 +58,9 @@ body {
 
 .table > thead {
     background: var(--color-secondary);
+}
+.table > tbody tr:nth-child(odd) {
+    background: #e6e2dc !important;
 }
 
 .page-item.active .page-link {

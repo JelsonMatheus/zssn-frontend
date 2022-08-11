@@ -1,0 +1,36 @@
+{% extends 'core/base/base.html' %}
+{% load static %}
+
+{% block title %}zssn - infected{% endblock %}
+
+{% block content %}
+<form id="survivorForm" class="p-5 border" method="POST">
+    <div class="row">
+        <div class="col-6 col-sm-5">
+            <div class="mb-3">
+                <label for="informant" class="form-label">Informante:</label>
+                <select id="informant" name="informant" class="form-select" required>
+                </select>
+            </div>
+        </div>
+        <div class="col-6 col-sm-5">
+            <div class="mb-3">
+                <label for="infected" class="form-label">Infectado:</label>
+                <select id="infected" name="infected" class="form-select" required>
+                </select>
+            </div>
+        </div>
+        <div class="col align-self-center">
+            <button class="btn btn-success mt-3">
+                <i class="bi bi-clipboard-heart-fill"></i>
+                Salvar
+            </button>
+        </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/infected.js'%}"></script>
+{% endblock %}
