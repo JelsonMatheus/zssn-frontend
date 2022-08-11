@@ -6,24 +6,23 @@
 async function showList() {
     
     const apiSurvivor = new ApiSurvivor();
-    try {
-        const data = await apiSurvivor.list();
+    apiSurvivor.list().then(data => {
         const bodyTable = document.getElementById("survivorList");
         bodyTable.innerHTML = "";
+        console.log(data);
 
         data.forEach((element, index) => {
             bodyTable.innerHTML += templateRow(element, index+1);
         });
 
-        if(!data) {
+        if(data.length === 0) {
             const msg = "Não existem sobreviventes cadastros."
             bodyTable.innerHTML += templateEmpyRow(msg);
         }
-
-    } catch(error) {
+    }).catch(error => {
         const msg = "Sistema indisponível.";
         createToastify(msg);
-    }
+    });
 }
 
 function templateRow(survivor, row) {
